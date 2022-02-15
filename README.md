@@ -2,7 +2,7 @@
 ## Getting started
 ### To check the project:
 
-You can check the project on [GitHub pages](https://nicolasarevalo.github.io/movies/).
+-
 
 Also, you can clone the repo and with:
 
