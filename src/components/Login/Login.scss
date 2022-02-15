@@ -1,0 +1,30 @@
+
+@import '../../global.scss';
+.login{
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient($azul5, $azul4);
+}
+.login-wrapper{
+    padding: 15% 10%;
+    display: flex;
+    flex-flow: column wrap;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 10em;
+    &>h1{
+        align-self: flex-start;
+        font-family: $bitter;
+        font-weight: 700;
+        color: $azul2;
+        font-size: 60px;
+    }
+    .login_form{
+
+        display: flex;
+        flex-flow: column wrap;
+        width: 70%;
+        gap: 2em;
+        
+    }
+}
