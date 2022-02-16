@@ -30,4 +30,20 @@ Then I did the mockup. First I did a wireframe handmade. Then I did it on [Figma
 * Html, Css, Js, -> React
 * Preprossesor -> Sass
 
+### Day 2:
+
+Today I finished the login-computer-view, i did the home page (just the styles), and consumed the API to get the movies; understand the API, now I know how to get the movies by ID, genre, and name.
+
+### Pending:
+
+* I need to finish the persisten login (I'll use the localStorage)
+* I need to list the movies by genre
+* I need to fix the card for the computer-screen
+
 ...
+
+
+
+
+
+
