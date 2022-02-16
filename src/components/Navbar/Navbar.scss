@@ -1,0 +1,71 @@
+@import "../../global.scss";
+
+nav {
+  z-index: 5;
+  width: 100vw;
+  height: 80px;
+  position: fixed;
+  bottom: 0;
+
+  background: $white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .navbar_wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 90%;
+    height: 100%;
+
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+
+    li {
+      cursor: pointer;
+      span{
+        display: none;
+      }
+      .icon {
+        width: 50px;
+        height: 44px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  nav{
+    top: 0;
+    bottom: unset;
+
+    background: $whiteDEG;
+
+    .navbar_wrapper{
+      justify-content: center;
+      gap: 10%;
+      a {
+        display: flex;
+        flex-flow: row;
+        gap: 1rem;
+        text-decoration: none;
+        &:visited{
+          color: inherit;
+        }
+        span{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+  
+          font-family: $bitter;
+          font-weight: 700;
+          color: $azul4;
+          font-size: 25px;
+        }
+      }
+    }
+
+  }
+}

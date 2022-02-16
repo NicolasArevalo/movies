@@ -1,0 +1,150 @@
+@import "../../global.scss";
+
+main {
+  .all_wrapper {
+    /* width: inherit;
+    height: inherit; */
+
+    display: flex;
+    flex-flow: column wrap;
+    gap: 2em;
+
+    .section {
+      width: 100vw;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .all_home {
+      width: 100%;
+      height: 60vh;
+      background: linear-gradient($azul3 40%, $azul2);
+      .home_wrapper {
+        align-self: flex-start;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        padding: 25px;
+        display: flex;
+        flex-flow: column;
+        justify-content: space-evenly;
+        align-items: center;
+
+        .home_top {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          & h2 {
+            font-family: $bitter;
+            align-self: flex-start;
+
+            font-weight: 700;
+            color: $azul2;
+            font-size: 60px;
+
+            z-index: 2;
+            &::after {
+              content: "MOVIES";
+              width: inherit;
+              height: inherit;
+              position: absolute;
+              left: 1.3em;
+              top: 1.5em;
+              opacity: 0.2;
+              font-weight: 400;
+              transform: scale(1.6);
+            }
+          }
+          & p {
+            color: $white;
+            font-size: large;
+          }
+        }
+        .home_input {
+          display: flex;
+          width: 95%;
+          gap: 1rem;
+          flex-direction: column;
+          font-size: large;
+          label {
+            margin-left: 2rem;
+            color: $white;
+          }
+          button {
+            font-size: large;
+            color: $white;
+            background: $azul4;
+            margin-right: 2rem;
+          }
+        }
+      }
+    }
+
+    .fav_wrapper {
+      width: 90%;
+      display: block;
+      .fav_title{
+        margin-left: 1em;
+      }
+      
+    }
+
+    .movie_wrapper {
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  main {
+    margin-top: 80px;
+    .all_wrapper {
+      .all_home {
+        height: 70vh;
+        .home_wrapper {
+          width: 60%;
+          .home_top {
+            width: 100%;
+            & h2 {
+              font-size: 100px;
+              z-index: 2;
+              &::after {
+                content: "MOVIES";
+                width: inherit;
+                height: inherit;
+                position: absolute;
+                left: 1.5em;
+                top: 0.8em;
+                opacity: 0.2;
+                font-weight: 400;
+                transform: scale(1.8);
+              }
+            }
+            & p {
+              color: $white;
+              font-size: x-large;
+            }
+          }
+          .home_input {
+            width: 100%;
+            input{
+                padding: 16px;
+            }
+            label {
+              margin-left: 2rem;
+              color: $white;
+              font-size: xx-large;
+            }
+            button {
+              padding: 10px;
+              border-radius: 20px;
+              font-size: x-large;
+              width: 20%;
+            }
+          }
+        }
+      }
+    }
+  }
+}

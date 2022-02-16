@@ -22,13 +22,15 @@ export const Login = () => {
         <div className="login">
             <div className='login-wrapper'>
                 <h1>Movies</h1>
-                <form onClick={handleSubmit} value='Your username' className='login_form'>
+                <form onSubmit={handleSubmit} className='login_form'>
                     <input
-                        type="text" name='username'
-                        onChange={(e) => setUsername(e.target.value)} />
+                        type="text" name='username' 
+                        onChange={ ({ target }) => setUsername(target.value)} />
+
                     <input
                         type="password"
                         onChange={({ target }) => setPassword(target.value)} />
+
                     <button>Get in</button>
                 </form>
 

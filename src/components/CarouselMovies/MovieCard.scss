@@ -1,0 +1,53 @@
+@import "../../global.scss";
+
+.card_wrapper {
+  min-width: 250px;
+  min-height: 250px;
+  max-height: 95%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  /* overflow: hidden; */
+  display: flex;
+  flex-flow: column nowrap;
+  border-radius: 2px;
+
+  .card_img {
+    max-width: 250px;
+    max-height: 150px;
+    flex-grow: 1;
+    border-radius: 2px 2px 0 0;
+  }
+
+  .card_body {
+    padding: 10px;
+    position: relative;
+    flex-grow: 1;
+    h4 {
+    }
+    p {
+      /* white-space: nowrap; */
+      overflow: hidden;
+      height: inherit;
+    }
+    label {
+    }
+    .card_limit-age {
+      position: absolute;
+      bottom: 1.2em;
+      left: 1.5em;
+      span {
+      }
+    }
+    .card_fav {
+      height: 10px;
+      width: inherit;
+      position: absolute;
+      bottom: 1.8em;
+      right: .5em;
+      .heart {
+        z-index: 4;
+        width: 45px;
+        height: 45px;
+      }
+    }
+  }
+}

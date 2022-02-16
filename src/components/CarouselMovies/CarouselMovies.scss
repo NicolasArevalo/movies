@@ -1,0 +1,11 @@
+@import '../../global.scss';
+
+.carousel_wrapper{
+    width: 100%;
+    overflow: scroll;
+    height: 290px;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1em;
+    margin: 1em;
+}

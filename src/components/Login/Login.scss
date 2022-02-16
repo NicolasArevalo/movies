@@ -6,12 +6,12 @@
     background: linear-gradient($azul5, $azul4);
 }
 .login-wrapper{
-    padding: 15% 10%;
+    padding: 25% 10%;
     display: flex;
     flex-flow: column wrap;
     /* justify-content: center; */
     align-items: center;
-    gap: 10em;
+    gap: 8em;
     &>h1{
         align-self: flex-start;
         font-family: $bitter;
@@ -23,8 +23,41 @@
 
         display: flex;
         flex-flow: column wrap;
-        width: 70%;
+        width: 95%;
         gap: 2em;
         
     }
 }
+
+
+// Large devices (desktops, 992px and up)
+@media screen and (min-width: 992px) { 
+    .login-wrapper{
+        padding: 18% 10%;
+        flex-flow: row nowrap;
+        & h1{
+            
+            font-weight: 700;
+            flex-grow: 1;
+            font-size: 100px;
+            width: 60%;
+        }
+        & input{
+            padding: 12px 22px;
+            transform: scale(1.1);
+            border-radius: 26px;
+            font-size: larger;
+            /* width: 70%; */
+            /* align-self: flex-end; */
+        }
+        & button{
+            padding: 10px;
+            border-radius: 20px;
+            font-size: larger;
+        }
+
+    }
+ }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (max-width: 1200px) {  }
