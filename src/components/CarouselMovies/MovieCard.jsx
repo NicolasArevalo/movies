@@ -1,34 +1,51 @@
-import React from 'react'
+import React, {useState} from 'react'
 import './MovieCard.scss'
 
-import HeartBlue from '../../assets/heart-solid.svg';
-import HeartRed from '../../assets/heart.svg';
+import HeartBlue from '../../assets/heart-dark.svg';
+/* import HeartRed from '../../assets/heart.svg'; */
+import ModalMovie from './ModalMovie';
 
-const MovieCard = ({id ,title, description, language, votes, img, releaseDate}) => {
-    const keyxD =  id
-    
-  return (
-    <div className='card_wrapper'>
+const MovieCard = ({ id, title, description, language, votes, img, releaseDate }) => {
+
+    const [modalOpened, setModalOpened] = useState(false);
+    const [cerrar, setCerrar] = useState(null);
+
+    const openModal = () => {
+        setModalOpened( !modalOpened )
+    }
 
 
-        <img src={img} alt="" className='card_img' />
-        <div className="card_body">
-            <h4>{title}</h4>
-            {/* <p>{description}</p> */}
-            {/* <label>Language: {language}</label> */}
-            <p>Relase date: {releaseDate}</p>
+    const getCerrar = (cerrar) => {
+        setCerrar(cerrar);
+        !cerrar ? setModalOpened(!modalOpened) : setModalOpened(modalOpened)
+      }
 
-            <div className="card_limit-age">
-                <label>{votes}</label>
+    return (
+        <div className='card_wrapper' >
+
+            { modalOpened && <ModalMovie title={title}
+                            img={ img } 
+                            language={language}
+                            description={description} 
+                            releaseDate={releaseDate}
+                            votes={votes}  getCerrar={getCerrar} /> }
+
+            <img src={img} alt="" className='card_img' onClick={ openModal }/>
+            <div className="card_body" onClick={ openModal }>
+                <h4>{title}</h4>
+                <p>Relase date: {releaseDate}</p>
+
+                <div className="card_votes">
+                    <label>{Number.isInteger(votes) ? `${votes}.0` : votes}</label>
+                </div>
+
+                <div className="card_fav">
+                    <img src={HeartBlue} alt="" className='heart' />
+                </div>
             </div>
 
-            <div className="card_fav">
-                <img src={HeartBlue} alt="" className='heart'/>
-            </div>
         </div>
-
-    </div>
-  )
+    )
 }
 
 export default MovieCard;

@@ -23,6 +23,13 @@ $whiteDEG: rgba(255, 255, 255, .9);
 
 html{
     scroll-behavior: smooth;
+    ::-webkit-scrollbar{
+        width: 5px;
+        height: 5px;
+    }
+    ::-webkit-scrollbar-thumb{
+        background: $azul3;
+        border-radius: 1px;}
 }
 body{
     font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;

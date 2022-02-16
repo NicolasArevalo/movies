@@ -30,11 +30,20 @@
     }
     label {
     }
-    .card_limit-age {
+    .card_votes {
       position: absolute;
-      bottom: 1.2em;
-      left: 1.5em;
-      span {
+      bottom: 1em;
+      left: 1em;
+      width: 37px;
+      height: 36px;
+
+      border-radius: 56%;
+      background-color: $azul4;
+      padding: .5rem;
+      label {
+        height: 100%;
+        width: 100%;
+        text-align: center;
       }
     }
     .card_fav {

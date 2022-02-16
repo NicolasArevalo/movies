@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import CarouselMovies from '../CarouselMovies/CarouselMovies';
 /* import MovieCard from '../CarouselMovies/MovieCard'; */
 import Navbar from '../Navbar/Navbar'
@@ -7,7 +7,23 @@ import './Home.scss';
 
 
 export const Home = () => {
-  return (
+
+  const [query, setQuery] = useState('police');
+
+
+  const handleQuery = ({ target }) => {
+    setQuery(target.value);
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    /* handleQuery 
+    console.log(query)*/
+
+  }
+
+
+  return (/*  */
     <>
       <header>
         <Navbar />
@@ -24,28 +40,28 @@ export const Home = () => {
                 <p>Choose your favorites...</p>
               </div>
 
-              <div className="home_input">
+              <form className="home_input" onSubmit={handleSubmit}>
                 <label htmlFor="input"> Or search it:</label>
-                <input type="text" name="query" id="query" />
-                <button className='home_btn'>Search</button>
-              </div>
+                <input type="text" name="query" id="query" value={query} onChange={handleQuery} autoComplete="off" />
+                <button className='home_btn'><a href="#favs">Search</a></button>
+              </form>
 
             </div>
           </section>
 
           <section id="favs" className='all_favorites section'>
             <div className="fav_wrapper">
-              <h4 className='fav_title'>FAVORITES</h4>
-              <CarouselMovies />
+              <h4 className='fav_title'>RESULTS FOR {query.toUpperCase()}</h4>
+              <CarouselMovies query={query} />
             </div>
           </section>
 
           <hr />
-          
+
           <section id="movies" className='all_movies section'>
-          <div className="fav_wrapper">
+            <div className="fav_wrapper">
               <h4 className='fav_title'>ALL MOVIES</h4>
-              <CarouselMovies />
+              {/* <CarouselMovies /> */}
 
               <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
             </div>

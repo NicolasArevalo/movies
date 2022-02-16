@@ -78,6 +78,13 @@ main {
             background: $azul4;
             margin-right: 2rem;
           }
+          a{
+            color: inherit;
+            text-decoration: none;
+            &:visited{
+              color: inherit;
+            }
+          }
         }
       }
     }
@@ -85,6 +92,7 @@ main {
     .fav_wrapper {
       width: 90%;
       display: block;
+      /* overflow: hidden; */
       .fav_title{
         margin-left: 1em;
       }
