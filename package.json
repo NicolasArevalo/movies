@@ -16,7 +16,7 @@
     "style-loader": "^3.3.1",
     "web-vitals": "^2.1.4"
   },
-  "homepage": "NicolasArevalo.github.io/movies",
+  "homepage": "nicolasarevalo.github.io/movies",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
