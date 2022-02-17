@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import CarouselMovies from '../CarouselMovies/CarouselMovies';
-/* import MovieCard from '../CarouselMovies/MovieCard'; */
+import { Navigate, useNavigate }  from 'react-router-dom'
+
+
+import CarouselMovies from '../CarouselMovies/CarouselMovies'
 import Navbar from '../Navbar/Navbar'
 
 import './Home.scss';
@@ -17,11 +19,11 @@ export const Home = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    /* handleQuery 
-    console.log(query)*/
-
   }
 
+/*   const userDetails = localStorage.getItem('userDetails')
+  
+  userDetails == null ? redirect */
 
   return (/*  */
     <>

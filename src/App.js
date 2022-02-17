@@ -1,24 +1,29 @@
+import React, { Suspense, useState, useEffect } from "react";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate,
+  Outlet,
+} from "react-router-dom";
+import { Login } from "./components/Login/Login";
+import { Home } from "./components/Home/Home";
+import { Loading } from "./components/Loading/Loading";
 
-import React, { Suspense } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { Login } from './components/Login/Login';
-import { Home } from './components/Home/Home';
-import { Loading } from './components/Loading/Loading'
+import PrivateRoute from "./PrivateRoute";
 
-import './global.scss';
-
+import "./global.scss";
 
 function App() {
   return (
     <BrowserRouter>
-		<Suspense fallback={Loading}>
-				<Routes>
-					<Route exact path="/" element={<Home />} />
-					<Route exact path="/login" element={<Login />} />
-				</Routes>
-		</Suspense>
-			
-	</BrowserRouter>
+      <Suspense fallback={Loading}>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route exact path="/" element={<PrivateRoute />} />
+        </Routes>
+      </Suspense>
+    </BrowserRouter>
   );
 }
 

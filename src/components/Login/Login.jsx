@@ -1,20 +1,45 @@
 import React, { useState } from 'react'
-import { useNavigate }  from 'react-router-dom';
+import { useNavigate }  from 'react-router-dom'
 
 import './Login.scss';
 
-
+const users = {
+    usernameU: 'Pablito',
+    passwordU: 123
+}
 
 export const Login = () => {
 
-    const navigate = useNavigate();
+    const navigate = useNavigate()
 
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert(`Hola, ${username}, bienvenido.`);
+
+        const userDetails = {
+            username: username,
+            password: password
+        }
+
+        const {usernameU, passwordU} = users;
+
+        Object.entries(userDetails).forEach(([key, value]) => {
+            alert(key)
+            if ( key == 'username' ){
+                value === usernameU ? alert('es crrepto') : alert('noks we')
+            } else if( key === 'password' ) {
+                value === passwordU ? alert('pass corrupta') : alert ('contra nada too')
+            } else {
+                alert('wtf we')
+            }
+          });
+
+
+        localStorage.setItem('userDetails', JSON.stringify(userDetails))
+        alert(`Hola, ${username}, bienvenido.`)
+        
         navigate('/');
     }
 
