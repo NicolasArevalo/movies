@@ -36,10 +36,15 @@ Today I finished the login-computer-view, i did the home page (just the styles),
 
 ### Pending:
 
+
+
 * I need to finish the persisten login (I'll use the localStorage)
 * I need to list the movies by genre
 * I need to fix the card for the computer-screen
 
+### Day 3:
+
+I Already did the modal, and the search now works. I have pending to the deploy here in github pages to everyone can check it out.
 ...
 
 
