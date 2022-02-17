@@ -16,7 +16,7 @@ import "./global.scss";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Suspense fallback={Loading}>
         <Routes>
           <Route path="/login" element={<Login />} />
