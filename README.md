@@ -2,7 +2,7 @@
 ## Getting started
 ### To check the project:
 
--
+- https://nicolasarevalo.github.io/movies/login 
 
 Also, you can clone the repo and with:
 
