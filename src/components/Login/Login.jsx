@@ -22,10 +22,10 @@ export const Login = () => {
             username: username,
             password: password
         }
-
+/*
         const {usernameU, passwordU} = users;
 
-        Object.entries(userDetails).forEach(([key, value]) => {
+         Object.entries(userDetails).forEach(([key, value]) => {
             alert(key)
             if ( key == 'username' ){
                 value === usernameU ? alert('es crrepto') : alert('noks we')
@@ -35,7 +35,7 @@ export const Login = () => {
                 alert('wtf we')
             }
           });
-
+ */
 
         localStorage.setItem('userDetails', JSON.stringify(userDetails))
         alert(`Hola, ${username}, bienvenido.`)
