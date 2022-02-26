@@ -10,7 +10,6 @@ const PrivateRoute = () => {
     if (userDetails) {
         isAuthenticated = true;
     } else {
-      alert('You must be loged in to see the home.')
         isAuthenticated = false;
     }
   
