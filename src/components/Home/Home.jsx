@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import { Navigate, useNavigate }  from 'react-router-dom'
+import React, { useState } from 'react'
 
-
+import Movies from '../movies/Movies'
 import CarouselMovies from '../CarouselMovies/CarouselMovies'
 import Navbar from '../Navbar/Navbar'
 
@@ -10,7 +9,7 @@ import './Home.scss';
 
 export const Home = () => {
 
-  const [query, setQuery] = useState('police');
+  const [query, setQuery] = useState('');
 
 
   const handleQuery = ({ target }) => {
@@ -21,11 +20,7 @@ export const Home = () => {
     e.preventDefault();
   }
 
-/*   const userDetails = localStorage.getItem('userDetails')
-  
-  userDetails == null ? redirect */
-
-  return (/*  */
+  return (
     <>
       <header>
         <Navbar />
@@ -44,7 +39,7 @@ export const Home = () => {
 
               <form className="home_input" onSubmit={handleSubmit}>
                 <label htmlFor="input"> Or search it:</label>
-                <input type="text" name="query" id="query" value={query} onChange={handleQuery} autoComplete="off" />
+                <input type="text" name="query" id="query" value={query} onChange={handleQuery} autoComplete="off" placeholder='Search something' />
                 <button className='home_btn'><a href="#favs">Search</a></button>
               </form>
 
@@ -54,23 +49,23 @@ export const Home = () => {
           <section id="favs" className='all_favorites section'>
             <div className="fav_wrapper">
               <h4 className='fav_title'>RESULTS FOR {query.toUpperCase()}</h4>
-              <CarouselMovies query={query} />
+              { query && <CarouselMovies query={query} />}
             </div>
           </section>
 
-          <hr />
+          <hr className='acheere'/>
 
           <section id="movies" className='all_movies section'>
             <div className="fav_wrapper">
-              <h4 className='fav_title'>ALL MOVIES</h4>
-              {/* <CarouselMovies /> */}
-
-              <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+              <Movies />
             </div>
           </section>
 
         </div>
       </main>
+      <footer>
+        <p >Todos los izquierdos reservados - <a href="https://twitter.com/lunago28">@lunago28</a></p>
+      </footer>
     </>
   )
 }

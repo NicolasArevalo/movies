@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from 'react'
 import './ModalMovie.scss';
 
-
 import HeartBlue from '../../assets/heart-dark.svg';
+import HeartRed from '../../assets/heart.svg';
 import close from '../../assets/xmark-solid.svg';
 
 const ModalMovie = ({ img, title, releaseDate, votes, language, description, getCerrar }) => {
-
+    const [heart, setHeart] = useState(true);
     const handleCierre = () =>{
         getCerrar(false)
     }
+
+    const changeHeart = () => { 
+        setHeart(!heart)
+    } 
 
 
     return (
@@ -30,8 +34,8 @@ const ModalMovie = ({ img, title, releaseDate, votes, language, description, get
                         <label >{votes}</label>
                     </div>
 
-                    <div className="modal_fav">
-                        <img src={HeartBlue} alt="" className='heart' />
+                    <div className="modal_fav" onClick={changeHeart}>
+                        <img src={heart ? HeartBlue : HeartRed} alt="" className='heart'  />
                     </div>
                 </div>
             </div>

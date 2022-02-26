@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { getMovies } from '../../services/getMovies'
+import { getMovies, getMoviesByGenre } from '../../services/getMovies'
 import './CarouselMovies.scss'
 
 import MovieCard from './MovieCard'
@@ -9,7 +9,30 @@ const CarouselMovies = ({ query }) => {
     const [ Info, setInfo] = useState([])
 
     useEffect(()=>{
-        getMovies( query ).then( setInfo )
+      
+      switch (query) {
+        case 28:
+          getMoviesByGenre( query ).then( setInfo )
+          break;
+        case 16:
+          getMoviesByGenre( query ).then( setInfo )
+          break;
+        case 27:
+          getMoviesByGenre( query ).then( setInfo )
+          break;
+        case 10749:
+          getMoviesByGenre( query ).then( setInfo )
+          break;
+        case 878:
+          getMoviesByGenre( query ).then( setInfo )
+          break;
+    
+      
+        default:
+          getMovies( query ).then( setInfo )
+          break;
+      }
+        
     }, [query])    
 
 

@@ -14,9 +14,9 @@ $bitter: Bitter;
 
 $azul1: #000004;
 $azul2: #14274d;
-$azul3: #41589f;
-$azul4: #7d8ffd;
-$azul5: #c7cbff;
+$azul3: #000004;
+$azul4: #c1d8a3;
+$azul5: #7a7eb4;
 
 $white: white;
 $whiteDEG: rgba(255, 255, 255, .9);
@@ -33,9 +33,6 @@ html{
 }
 body{
     font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
-
-    /* width: 100vw;
-    height: 100vh; */
     overflow-x: hidden;
 }
 input{
@@ -54,9 +51,15 @@ button{
     padding: 5px;
     border-radius: 16px;
 }
-/* Madia querys to re-use */
-// Large devices (desktops, 992px and up)
+a{
+    color: inherit;
+    text-decoration: none;
+
+    &:visited{
+        color: inherit;
+    }
+}
+
 @media (max-width: 992px) {  }
 
-// Extra large devices (large desktops, 1200px and up)
 @media (max-width: 1200px) {  }
